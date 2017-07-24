@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+BUILDPACK=$(dirname $(dirname $0))
+
+if [ -f $1/package.json ]; then
+  echo "Experimental simple-buildpack for Node.js `cat $BUILDPACK/VERSION`" && exit 0
+else
+  exit 1
+fi
